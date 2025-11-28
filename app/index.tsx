@@ -12,12 +12,12 @@ import {
 import * as Location from "expo-location";
 
 // CONFIGURAÇÃO: URL do webhook n8n
-const WEBHOOK_URL = "https://eddmundosjb.app.n8n.cloud/webhook-test/rastreio";
+const WEBHOOK_URL = "https://eddmundosjb.app.n8n.cloud/webhook/rastreio";
 
 // Parâmetros de decisão de movimento
 const SPEED_MOVING_THRESHOLD_MS = 0.5; // m/s, acima disso considera "ANDANDO"
 const DISTANCE_MOVING_THRESHOLD_M = 10; // metros, deslocamento mínimo para "ANDANDO"
-const MIN_UPDATE_INTERVAL_MS = 5000; // intervalo mínimo entre envios = 1 min
+const MIN_UPDATE_INTERVAL_MS = 60000; // intervalo mínimo entre envios = 1 min
 
 type LatLng = { latitude: number; longitude: number };
 
@@ -207,7 +207,7 @@ export default function Index() {
 
       <View style={styles.row}>
         <Button
-          title={isTracking ? "Parar" : "Iniciar"}
+          title={isTracking ? "Parar Rastreamento" : "Iniciar Rastreamento"}
           onPress={isTracking ? stopTracking : startTracking}
         />
       </View>
