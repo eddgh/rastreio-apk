@@ -12,7 +12,7 @@ import {
 import * as Location from "expo-location";
 
 // CONFIGURAÇÃO: URL do webhook n8n
-const WEBHOOK_URL = "https://eddmundosjb.app.n8n.cloud/webhook/rastreio";
+const WEBHOOK_URL = "https://pinier-unshorn-arlena.ngrok-free.dev/webhook/rastreion8n";
 
 // Parâmetros de decisão de movimento
 const SPEED_MOVING_THRESHOLD_MS = 0.5; // m/s, acima disso considera "ANDANDO"
@@ -20,6 +20,7 @@ const DISTANCE_MOVING_THRESHOLD_M = 10; // metros, deslocamento mínimo para "AN
 const MIN_UPDATE_INTERVAL_MS = 5000; // intervalo mínimo entre envios = 1 min
 
 type LatLng = { latitude: number; longitude: number };
+
 
 // Haversine para distância em metros
 function distanceMeters(a: LatLng, b: LatLng): number {
@@ -39,7 +40,7 @@ function distanceMeters(a: LatLng, b: LatLng): number {
   const c = 2 * Math.atan2(Math.sqrt(h), Math.sqrt(1 - h));
   return R * c;
 }
-
+F
 export default function Index() {
   const [placa, setPlaca] = useState<string>("");
   const [isTracking, setIsTracking] = useState<boolean>(false);
