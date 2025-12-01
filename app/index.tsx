@@ -40,7 +40,7 @@ function distanceMeters(a: LatLng, b: LatLng): number {
   const c = 2 * Math.atan2(Math.sqrt(h), Math.sqrt(1 - h));
   return R * c;
 }
-F
+
 export default function Index() {
   const [placa, setPlaca] = useState<string>("");
   const [isTracking, setIsTracking] = useState<boolean>(false);
